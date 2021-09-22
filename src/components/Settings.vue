@@ -2,20 +2,20 @@
   <h1>Settings</h1>
   <form @submit="onSubmit">
     <div class="form-control">
-      <label>Longitude</label>
-      <input
-          v-model="lon"
-          :placeholder="lon"
-          name="lon"
-          type="number"
-          step="0.0001"/>
-    </div>
-    <div class="form-control">
       <label>Latitude</label>
       <input
           v-model="lat"
           :placeholder="lat"
           name="lat"
+          type="number"
+          step="0.01"/>
+    </div>
+    <div class="form-control">
+      <label>Longitude</label>
+      <input
+          v-model="lon"
+          :placeholder="lon"
+          name="lon"
           type="number"
           step="0.01"/>
     </div>
