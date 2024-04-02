@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import{BASE_URL, LAT, LON, LANG, API_KEY} from "../util/weather-api";
+import{BASE_URL, LAT, LON, LANG, API_KEY} from "@/util/weather-api";
 import Settings from '../components/Settings'
 import Current from '../components/Current'
 import Hourly from '../components/Hourly'
