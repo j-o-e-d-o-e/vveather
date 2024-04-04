@@ -72,7 +72,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/winter-sweater.svg"
   },
   {
-    "revision": "8a54d14cfe49fadee7c41acee9340ec3",
+    "revision": "b211aae5193a7ec97710e3348eb330fe",
     "url": "/vveather/index.html"
   },
   {
@@ -84,7 +84,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/js/chunk-vendors.29ae15fc.js"
   },
   {
-    "revision": "73d9a6355bcc29a46e1a156d75731801",
+    "revision": "730c0c3c8588b8294f15156fe70bfffb",
     "url": "/vveather/manifest.json"
   },
   {

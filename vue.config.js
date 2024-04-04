@@ -4,8 +4,6 @@ module.exports = {
     outputDir: path.resolve(__dirname, 'docs/'),
     publicPath: process.env.NODE_ENV === "production" ? "/vveather/" : "/",
     pwa: {
-        name: 'VVeather',
-        themeColor: '#212529',
         manifestOptions: {
             id: "/vveather/",
             short_name: 'VVeather',
@@ -19,7 +17,7 @@ module.exports = {
                 sizes: '192x192'
             }],
             start_url: '/vveather/',
-            background_color: 'cornflowerblue',
+            background_color: '#fff',
             theme_color: '#212529',
         }
     }
