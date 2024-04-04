@@ -5,7 +5,7 @@
       <label>Latitude</label>
       <input
           v-model="lat"
-          :placeholder="lat"
+          placeholder="e.g. 90.0"
           name="lat"
           type="number"
           step="0.01"/>
@@ -14,21 +14,30 @@
       <label>Longitude</label>
       <input
           v-model="lon"
-          :placeholder="lon"
+          placeholder="e.g. 45.0"
           name="lon"
           type="number"
           step="0.01"/>
     </div>
     <div class="form-control">
+      <label>API key</label>
+      <input
+          ref="apikey"
+          v-model="apikey"
+          placeholder="visit: https://openweathermap.org/"
+          name="apikey"
+          type="text"/>
+    </div>
+    <div class="form-control">
       <label>Language</label>
       <select v-model="lang">
         <option value="en">English</option>
-        <option value="de">Deutsch</option>
         <option value="fr">Francais</option>
+        <option value="de">Deutsch</option>
       </select>
     </div>
-    <input type="submit" value="Save" class="btn btn-success"/>
-    <input @click="$emit('cancel')" value="Cancel" class="btn btn-danger"/>
+    <button type="submit" value="Save" class="btn btn-success">Save</button>
+    <button @click="$emit('cancel')" value="Cancel" class="btn btn-danger">Cancel</button>
   </form>
 </template>
 
@@ -42,6 +51,7 @@ export default {
     return {
       lon: this.params.lon,
       lat: this.params.lat,
+      apikey: this.params.apikey,
       lang: this.params.lang
     }
   },
@@ -51,6 +61,7 @@ export default {
       const newSettings = {
         lon: this.lon,
         lat: this.lat,
+        apikey: this.apikey,
         lang: this.lang
       };
       this.$emit('settings', newSettings);
@@ -73,9 +84,12 @@ export default {
 }
 
 input {
-  max-width: 100px;
+  min-width: 600px;
 }
-.btn{
-  max-width: 90px;
+
+button {
+  min-height: 100px;
+  min-width: 200px;
+  margin: 5px;
 }
 </style>

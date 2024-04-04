@@ -22,7 +22,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-#
-
-src/util/weather-api.js
-INFO.md
+data

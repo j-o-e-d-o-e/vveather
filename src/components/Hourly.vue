@@ -53,19 +53,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .grid-container {
   display: inline-grid;
   grid-template-columns: auto auto;
   grid-gap: 20px;
 }
-
-img {
-  width: 40px;
-  height: 40px;
-}
-
-button {
-  background-color: cornflowerblue;
+.grid-item{
+  width: 120px;
 }
 </style>

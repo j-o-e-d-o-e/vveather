@@ -40,3 +40,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+</style>

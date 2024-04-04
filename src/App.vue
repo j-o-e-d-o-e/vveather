@@ -1,9 +1,10 @@
 <template>
   <Header title="VVeather" @settings="toggle"/>
-  <div class="container">
+  <div id="main">
     <router-view :settings="settings" @settings="toggle"/>
+    <hr>
+    <Footer/>
   </div>
-  <Footer/>
 </template>
 
 <script>
@@ -30,61 +31,32 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+html {
+  background-color: cornflowerblue;
+}
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  font-size: xx-large;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-.container {
-  max-width: 600px;
-  margin: 10px auto;
-  overflow: auto;
-  min-height: 300px;
-  padding: 30px;
-  border-radius: 5px;
-  background-color: cornflowerblue;
-  color: antiquewhite;
-}
-
-.btn {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-#app {
+#main {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  padding: 20px;
+  background-color: cornflowerblue;
+  color: antiquewhite;
+  height: auto;
+  width: auto;
+}
+
+.table * {
+  color: antiquewhite;
+}
+
+img {
+  width: 100px;
+  height: 100px;
 }
 </style>
