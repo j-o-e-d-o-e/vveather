@@ -26,7 +26,7 @@
           v-model="apikey"
           placeholder="visit: https://openweathermap.org/"
           name="apikey"
-          type="text"/>
+          type="password"/>
     </div>
     <div class="form-control">
       <label>Language</label>

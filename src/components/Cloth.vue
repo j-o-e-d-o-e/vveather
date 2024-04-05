@@ -19,36 +19,40 @@ export default {
   computed: {
     clothing() {
       const svg = fn => fn + ".svg";
-      const rain = Math.floor(this.today.pop * 100)
-      const now = new Date();
-      let feelsLike = now.getHours() > 18 ?
-          Math.floor((this.today.feels_like.eve + this.today.feels_like.night) / 2)
+
+      let temp = now.getHours() > 18
+          ? Math.floor((this.today.feels_like.eve + this.today.feels_like.night) / 2)
           : Math.floor(this.today.feels_like.day);
+      const rainProb = Math.floor(this.today.pop * 100)
+      const rainVol = Math.floor(this.today?.rain ?? 0);
+      const now = new Date();
+      const WINTER_COAT_HAT = 18;
       let cloths = [];
 
-      if (this.today.wind_speed < 10 && ((rain > 0.5 && feelsLike < 15) || rain > 0.75)) cloths.push(svg("umbrella"));
+      if (this.today.wind_speed < 12
+          && ((rainProb > 0.5 && temp < WINTER_COAT_HAT) || (rainProb > 0.75 && rainVol > 4))) cloths.push(svg("umbrella"));
 
-      if (feelsLike < 15) cloths.push(svg("winter-hat"))
-      else if (now.getHours() < 18 && feelsLike > 25 && this.today.clouds < 10) cloths.push(svg("summer-hat"))
+      if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-hat"))
+      else if (now.getHours() < 18 && temp > 25 && this.today.clouds < 10) cloths.push(svg("summer-hat"))
 
-      if (feelsLike < 5) cloths.push(svg("scarf"))
+      if (temp < 5) cloths.push(svg("scarf"))
 
-      if (feelsLike < 15) cloths.push(svg("winter-coat"));
-      else if (rain > 0.5) cloths.push(svg("rain-coat"));
-      else if (feelsLike < 25) cloths.push(svg("summer-jacket"));
+      if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-coat"));
+      else if (rainProb > 0.5) cloths.push(svg("rain-coat"));
+      else if (temp < 25) cloths.push(svg("summer-jacket"));
 
-      if (feelsLike < 15) cloths.push(svg("winter-sweater"));
-      else if (feelsLike < 25) cloths.push(svg("summer-sweater"));
+      if (temp < 15) cloths.push(svg("winter-sweater"));
+      else if (temp < 25) cloths.push(svg("summer-sweater"));
       else cloths.push(svg("tshirt"));
 
-      if (feelsLike < 5) cloths.push(svg("gloves"))
+      if (temp < 5) cloths.push(svg("gloves"))
 
-      if (feelsLike > 30) cloths.push(svg("summer-pants"))
+      if (temp > 30) cloths.push(svg("summer-pants"))
       else cloths.push(svg("jeans"))
 
-      if (feelsLike < 25) cloths.push(svg("socks"));
+      if (temp < 25) cloths.push(svg("socks"));
 
-      if (feelsLike < 10) cloths.push(svg("winter-boots"))
+      if (temp < 10) cloths.push(svg("winter-boots"))
       else cloths.push(svg("summer-shoes"))
 
       return cloths;
