@@ -20,22 +20,22 @@ export default {
     clothing() {
       const svg = fn => fn + ".svg";
 
+      const now = new Date();
       let temp = now.getHours() > 18
           ? Math.floor((this.today.feels_like.eve + this.today.feels_like.night) / 2)
           : Math.floor(this.today.feels_like.day);
       const rainProb = Math.floor(this.today.pop * 100)
       const rainVol = Math.floor(this.today?.rain ?? 0);
-      const now = new Date();
       const WINTER_COAT_HAT = 18;
       let cloths = [];
 
       if (this.today.wind_speed < 12
           && ((rainProb > 0.5 && temp < WINTER_COAT_HAT) || (rainProb > 0.75 && rainVol > 4))) cloths.push(svg("umbrella"));
 
-      if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-hat"))
-      else if (now.getHours() < 18 && temp > 25 && this.today.clouds < 10) cloths.push(svg("summer-hat"))
+      if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-hat"));
+      else if (now.getHours() < 18 && temp > 25 && this.today.clouds < 10) cloths.push(svg("summer-hat"));
 
-      if (temp < 5) cloths.push(svg("scarf"))
+      if (temp < 5) cloths.push(svg("scarf"));
 
       if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-coat"));
       else if (rainProb > 0.5) cloths.push(svg("rain-coat"));
@@ -45,15 +45,15 @@ export default {
       else if (temp < 25) cloths.push(svg("summer-sweater"));
       else cloths.push(svg("tshirt"));
 
-      if (temp < 5) cloths.push(svg("gloves"))
+      if (temp < 5) cloths.push(svg("gloves"));
 
-      if (temp > 30) cloths.push(svg("summer-pants"))
-      else cloths.push(svg("jeans"))
+      if (temp > 30) cloths.push(svg("summer-pants"));
+      else cloths.push(svg("jeans"));
 
       if (temp < 25) cloths.push(svg("socks"));
 
-      if (temp < 10) cloths.push(svg("winter-boots"))
-      else cloths.push(svg("summer-shoes"))
+      if (temp < 10) cloths.push(svg("winter-boots"));
+      else cloths.push(svg("summer-shoes"));
 
       return cloths;
     }

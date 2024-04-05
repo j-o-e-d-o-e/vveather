@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vveather/precache-manifest.0515f1238cef4105d51b368df97af00c.js"
+  "/vveather/precache-manifest.a0b0917fdd1fab241b789bbc4eed95a6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vveather"});

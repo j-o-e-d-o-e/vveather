@@ -45,10 +45,10 @@ export default {
       weather: Object,
       loading: true,
       params: {
-        lat: localStorage.getItem("vveather-lat"),
-        lon: localStorage.getItem("vveather-lon"),
-        apikey: localStorage.getItem("vveather-apikey"),
-        lang: localStorage.getItem("vveather-lang") ?? "en"
+        lat: localStorage.getItem("vv_lat"),
+        lon: localStorage.getItem("vv_lon"),
+        apikey: localStorage.getItem("vv_apikey"),
+        lang: localStorage.getItem("vv_lang") ?? "en"
       }
     }
   },
@@ -63,10 +63,10 @@ export default {
     async setParams(params) {
       this.loading = true;
       this.$emit('settings');
-      localStorage.setItem("vveather-lat", params.lat);
-      localStorage.setItem("vveather-lon", params.lon);
-      localStorage.setItem("vveather-apikey", params.apikey);
-      localStorage.setItem("vveather-lang", params.lang);
+      localStorage.setItem("vv_lat", params.lat);
+      localStorage.setItem("vv_lon", params.lon);
+      localStorage.setItem("vv_apikey", params.apikey);
+      localStorage.setItem("vv_lang", params.lang);
       this.params = params;
       await this.initData();
       this.loading = false;
