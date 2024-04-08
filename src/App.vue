@@ -60,7 +60,7 @@ img {
   height: 100px;
 }
 
-@media only screen and (min-height: 900px) {
+@media only screen and (min-width: 1000px) {
   * {
     font-size: large;
   }
