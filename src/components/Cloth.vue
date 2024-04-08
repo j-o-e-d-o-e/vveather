@@ -14,31 +14,30 @@
 export default {
   name: 'Cloth',
   props: {
-    today: Object,
+    hours: Object,
   },
   computed: {
     clothing() {
       const svg = fn => fn + ".svg";
-
       const now = new Date();
-      let temp = now.getHours() > 18
-          ? Math.floor((this.today.feels_like.eve + this.today.feels_like.night) / 2)
-          : Math.floor(this.today.feels_like.day);
-      const rainProb = Math.floor(this.today.pop * 100)
-      const rainVol = Math.floor(this.today?.rain ?? 0);
+      const temp = Math.floor(this.hours.reduce((acc, cur) => acc + cur.temp, 0) / this.hours.length);
+      const rainProb = Math.floor(this.hours.reduce((acc, cur) => acc + cur.pop * 100, 0) / this.hours.length);
+      const windSpeed = Math.floor(this.hours.reduce((acc, cur) => acc + cur.wind_speed, 0) / this.hours.length);
+      const clouds = Math.floor(this.hours.reduce((acc, cur) => acc + cur.clouds, 0) / this.hours.length);
+      console.log(this.hours);
+      console.log(`temp: ${temp}, rainProb: ${rainProb}, windSpeed: ${windSpeed}, clouds: ${clouds}`);
       const WINTER_COAT_HAT = 18;
       let cloths = [];
 
-      if (this.today.wind_speed < 12
-          && ((rainProb > 0.5 && temp < WINTER_COAT_HAT) || (rainProb > 0.75 && rainVol > 4))) cloths.push(svg("umbrella"));
+      if (windSpeed < 12 && ((rainProb > 50 && temp < WINTER_COAT_HAT) || rainProb > 75)) cloths.push(svg("umbrella"));
 
       if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-hat"));
-      else if (now.getHours() < 18 && temp > 25 && this.today.clouds < 10) cloths.push(svg("summer-hat"));
+      else if (now.getHours() < 18 && temp > 25 && clouds < 10) cloths.push(svg("summer-hat"));
 
       if (temp < 5) cloths.push(svg("scarf"));
 
       if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-coat"));
-      else if (rainProb > 0.5) cloths.push(svg("rain-coat"));
+      else if (rainProb > 50) cloths.push(svg("rain-coat"));
       else if (temp < 25) cloths.push(svg("summer-jacket"));
 
       if (temp < 15) cloths.push(svg("winter-sweater"));

@@ -12,7 +12,7 @@
       <hr>
       <Misc :current="weather.current"/>
       <hr>
-      <Cloth :today="weather.daily[0]"/>
+      <Cloth :hours="weather.hourly.slice(0, 5)"/>
     </section>
   </section>
 </template>
