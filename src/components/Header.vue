@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      navTogglerOpen: true
+      navTogglerOpen: Boolean
     }
   },
   methods: {
