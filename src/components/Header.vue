@@ -7,16 +7,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav" :class="{open: navTogglerOpen}">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item" @click="toggle">
             <router-link to="/" class="nav-link" aria-current="page">Home</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="toggle">
             <router-link to="/about" class="nav-link">About</router-link>
           </li>
-          <li class="nav-item">
-            <div @click="$emit('settings')"  v-show="$route.path==='/'" class="nav-link" aria-current="page">
+          <li class="nav-item" @click="toggle">
+            <div @click="$emit('settings')" v-show="$route.path==='/'" class="nav-link" aria-current="page">
               <i class="fas fa-cog"></i>
             </div>
           </li>
@@ -31,6 +31,16 @@ export default {
   name: "Header",
   props: {
     title: String
+  },
+  data() {
+    return {
+      navTogglerOpen: true
+    }
+  },
+  methods: {
+    toggle() {
+      this.navTogglerOpen = !this.navTogglerOpen;
+    }
   },
   emits: ['settings']
 };

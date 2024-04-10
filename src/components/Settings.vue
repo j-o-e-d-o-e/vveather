@@ -1,6 +1,6 @@
 <template>
   <h1>Settings</h1>
-  <form @submit="onSubmit">
+  <form>
     <div class="form-control">
       <label>Latitude</label>
       <input
@@ -36,8 +36,8 @@
         <option value="de">Deutsch</option>
       </select>
     </div>
-    <button type="submit" value="Save" class="btn btn-success">Save</button>
-    <button @click="$emit('cancel')" value="Cancel" class="btn btn-danger">Cancel</button>
+    <button @click="submit" class="btn btn-secondary">Save</button>
+    <button @click="$emit('cancel')" class="btn btn-secondary">Cancel</button>
   </form>
 </template>
 
@@ -56,7 +56,7 @@ export default {
     }
   },
   methods: {
-    onSubmit: function (e) {
+    submit: function (e) {
       e.preventDefault();
       const newSettings = {
         lon: this.lon,
@@ -83,13 +83,13 @@ export default {
   display: block;
 }
 
-input {
+input, select {
   min-width: 600px;
 }
 
 button {
-  min-height: 100px;
-  min-width: 200px;
+  min-height: 50px;
+  min-width: 100px;
   margin: 5px;
 }
 </style>
