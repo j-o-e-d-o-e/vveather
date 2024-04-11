@@ -1,18 +1,22 @@
 <template>
-  <i @click="pre" class="fas fa-angle-left" style="margin-right: 15px"></i>
-  <div v-for="hour in hours.slice(index, index + step)" :key="hour" class="grid-container">
-    <div class="grid-item">
-      <div>{{ toTime(hour.dt) }}</div>
-      <img :src="`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`" alt="icon">
-      <div>
-        <i :class="thermometer(hour.temp)"></i> <small>{{ Math.floor(hour.temp) }}°</small>
-      </div>
-      <div>
-        <i class="fas fa-cloud-rain"></i> <small>{{ Math.floor(hour.pop * 100) }}%</small>
-      </div>
-    </div>
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <td v-for="hour in hours" :key="hour">
+          <div class="grid-item">
+            <div>{{ toTime(hour.dt) }}</div>
+            <img :src="`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`" alt="icon">
+            <div>
+              <i :class="thermometer(hour.temp)"></i> <small>{{ Math.floor(hour.temp) }}°</small>
+            </div>
+            <div>
+              <i class="fas fa-cloud-rain"></i> <small>{{ Math.floor(hour.pop * 100) }}%</small>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
-  <i @click="post" class="fas fa-angle-right"></i>
 </template>
 
 <script>
@@ -23,24 +27,9 @@ export default {
   props: {
     hours: Array,
   },
-  data() {
-    return {
-      index: 0,
-      step: 6
-    }
-  },
   methods: {
     toTime(t) {
       return moment(new Date(t * 1000)).format('HH:mm');
-    },
-    pre() {
-      if (this.index !== 0) this.index -= this.step;
-    },
-    sliceHours() {
-      return this.hours.slice(this.index, this.index + this.step);
-    },
-    post() {
-      if (this.index + this.step < this.hours.length) this.index += this.step;
     },
     thermometer(temp) {
       if (temp > 25) return "fas fa-thermometer-full";
@@ -54,12 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto;
-  grid-gap: 20px;
-}
-.grid-item{
-  width: 120px;
+.grid-item {
+  width: 130px;
 }
 </style>
