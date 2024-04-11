@@ -41,11 +41,8 @@ export default {
     toTime(t) {
       return moment(new Date(t * 1000)).format('HH:mm');
     },
-    toDay(t) {
-      return moment(new Date(t * 1000)).format('dd, MM');
-    },
     toDate(t) {
-      return moment(new Date(t * 1000)).format('dd, MM');
+      return moment(new Date(t * 1000)).format('dd, DD.MM.');
     },
     thermometer(temp) {
       if (temp > 25) return "fas fa-thermometer-full";
