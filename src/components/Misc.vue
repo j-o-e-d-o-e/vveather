@@ -45,6 +45,7 @@ export default {
 .grid-container {
   display: inline-grid;
   grid-template-columns: auto auto;
-  grid-gap: 20px;
+  grid-column-gap: 60px;
+  grid-row-gap: 20px;
 }
 </style>

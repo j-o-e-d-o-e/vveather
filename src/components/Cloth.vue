@@ -5,7 +5,7 @@
       <i v-bind:class="cloth"></i>
     </div>
     <div class="grid-item" id="plus" v-if="index !== clothing.length - 1">
-      <i class="fas fa-plus fa-2x"></i>
+      <i class="fas fa-plus fa-lg"></i>
     </div>
   </div>
 </template>
