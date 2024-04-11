@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3cf7007784995a906240",
-    "url": "/vveather/css/app.fe536251.css"
+    "revision": "efc0d2da7c13f53a27b1",
+    "url": "/vveather/css/app.e4472a30.css"
   },
   {
-    "revision": "f44810eb51bf15498e74",
+    "revision": "49e69d273a4eff129c25",
     "url": "/vveather/css/chunk-vendors.a5549ed4.css"
   },
   {
@@ -72,16 +72,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/winter-sweater.svg"
   },
   {
-    "revision": "dde233767c1fa0b6264dc7265350e97e",
+    "revision": "0a4eb6780271294a147ef12dea58fff5",
     "url": "/vveather/index.html"
   },
   {
-    "revision": "3cf7007784995a906240",
-    "url": "/vveather/js/app.89f719f6.js"
+    "revision": "efc0d2da7c13f53a27b1",
+    "url": "/vveather/js/app.3387a9c3.js"
   },
   {
-    "revision": "f44810eb51bf15498e74",
-    "url": "/vveather/js/chunk-vendors.29ae15fc.js"
+    "revision": "49e69d273a4eff129c25",
+    "url": "/vveather/js/chunk-vendors.931ac8e3.js"
   },
   {
     "revision": "730c0c3c8588b8294f15156fe70bfffb",

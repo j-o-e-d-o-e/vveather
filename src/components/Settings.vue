@@ -1,6 +1,6 @@
 <template>
   <h1>Settings</h1>
-  <form>
+  <form @submit.prevent="submit">
     <div class="form-control">
       <label>Latitude</label>
       <input
@@ -8,7 +8,8 @@
           placeholder="e.g. 90.0"
           name="lat"
           type="number"
-          step="0.01"/>
+          step="0.01"
+          required/>
     </div>
     <div class="form-control">
       <label>Longitude</label>
@@ -17,7 +18,8 @@
           placeholder="e.g. 45.0"
           name="lon"
           type="number"
-          step="0.01"/>
+          step="0.01"
+          required/>
     </div>
     <div class="form-control">
       <label>API key</label>
@@ -26,7 +28,8 @@
           v-model="apikey"
           placeholder="visit: https://openweathermap.org/"
           name="apikey"
-          type="password"/>
+          type="password"
+          required/>
     </div>
     <div class="form-control">
       <label>Language</label>
@@ -36,7 +39,7 @@
         <option value="de">Deutsch</option>
       </select>
     </div>
-    <button @click="submit" class="btn btn-secondary">Save</button>
+    <button type="submit" class="btn btn-secondary">Save</button>
     <button @click="$emit('cancel')" class="btn btn-secondary">Cancel</button>
   </form>
 </template>
@@ -47,7 +50,7 @@ export default {
   props: {
     params: Object
   },
-  data: function () {
+  data() {
     return {
       lon: this.params.lon,
       lat: this.params.lat,
@@ -56,7 +59,7 @@ export default {
     }
   },
   methods: {
-    submit: function (e) {
+    submit(e) {
       e.preventDefault();
       const newSettings = {
         lon: this.lon,
