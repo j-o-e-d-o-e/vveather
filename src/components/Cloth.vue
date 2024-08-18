@@ -24,7 +24,7 @@ export default {
       const rainProb = Math.floor(this.hours.reduce((acc, cur) => acc + cur.pop * 100, 0) / this.hours.length);
       const windSpeed = Math.floor(this.hours.reduce((acc, cur) => acc + cur.wind_speed, 0) / this.hours.length);
       const clouds = Math.floor(this.hours.reduce((acc, cur) => acc + cur.clouds, 0) / this.hours.length);
-      const WINTER_COAT_HAT = 15;
+      const WINTER_COAT_HAT = 8;
       let cloths = [];
 
       if (windSpeed < 12 && ((rainProb > 30 && temp < WINTER_COAT_HAT) || rainProb > 75)) cloths.push(svg("umbrella"));
@@ -36,20 +36,20 @@ export default {
 
       if (temp < WINTER_COAT_HAT) cloths.push(svg("winter-coat"));
       else if (rainProb > 30) cloths.push(svg("rain-coat"));
-      else if (temp < 25) cloths.push(svg("summer-jacket"));
+      else if (temp < 20) cloths.push(svg("summer-jacket"));
 
       if (temp < 10) cloths.push(svg("winter-sweater"));
-      else if (temp < 25) cloths.push(svg("summer-sweater"));
+      else if (temp < 20) cloths.push(svg("summer-sweater"));
       else cloths.push(svg("tshirt"));
 
       if (temp < 3) cloths.push(svg("gloves"));
 
-      if (temp > 30) cloths.push(svg("summer-pants"));
+      if (temp > 28) cloths.push(svg("summer-pants"));
       else cloths.push(svg("jeans"));
 
       if (temp < 25) cloths.push(svg("socks"));
 
-      if (temp < 10) cloths.push(svg("winter-boots"));
+      if (temp < 8) cloths.push(svg("winter-boots"));
       else cloths.push(svg("summer-shoes"));
 
       return cloths;

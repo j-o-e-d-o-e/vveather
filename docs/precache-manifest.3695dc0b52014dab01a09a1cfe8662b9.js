@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efc0d2da7c13f53a27b1",
-    "url": "/vveather/css/app.e4472a30.css"
+    "revision": "84f97874635d197de92d",
+    "url": "/vveather/css/app.ce11b72a.css"
   },
   {
     "revision": "49e69d273a4eff129c25",
@@ -72,12 +72,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/winter-sweater.svg"
   },
   {
-    "revision": "0a4eb6780271294a147ef12dea58fff5",
+    "revision": "f58cbd1fd5a7bc6328577fe4e4b0c441",
     "url": "/vveather/index.html"
   },
   {
-    "revision": "efc0d2da7c13f53a27b1",
-    "url": "/vveather/js/app.3387a9c3.js"
+    "revision": "84f97874635d197de92d",
+    "url": "/vveather/js/app.97b19e25.js"
   },
   {
     "revision": "49e69d273a4eff129c25",
