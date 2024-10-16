@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "84f97874635d197de92d",
+    "revision": "a5155d92cd3c8c6ed8b2",
     "url": "/vveather/css/app.ce11b72a.css"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/css/chunk-vendors.a5549ed4.css"
   },
   {
-    "revision": "2d77336be0d5d25ca1421373fe9bd9d6",
+    "revision": "e6d503046c36a418cb094ac6cb3a2f20",
     "url": "/vveather/img/gloves.svg"
   },
   {
@@ -36,7 +36,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/summer-jacket.svg"
   },
   {
-    "revision": "02948619db4e01a7326cd7d198212a84",
+    "revision": "a990a63fc071def48ac1acc53a5d49e3",
     "url": "/vveather/img/summer-pants.svg"
   },
   {
@@ -44,7 +44,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/summer-shoes.svg"
   },
   {
-    "revision": "fb34b726dbb45ee25bc9f4b009893eab",
+    "revision": "481eeb0c9928e9f5bdd6cb26f83b87c5",
     "url": "/vveather/img/summer-sweater.svg"
   },
   {
@@ -52,7 +52,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/tshirt.svg"
   },
   {
-    "revision": "173979e408f8bda23c41dbf0bb40d057",
+    "revision": "ffab518be9253ae9801c15aaea1bbb6c",
     "url": "/vveather/img/umbrella.svg"
   },
   {
@@ -68,16 +68,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vveather/img/winter-hat.svg"
   },
   {
-    "revision": "a4979f2712931385c728ae5fb3ad45ef",
+    "revision": "c1825e3448bcd7fd342b8feaa3da08e4",
     "url": "/vveather/img/winter-sweater.svg"
   },
   {
-    "revision": "f58cbd1fd5a7bc6328577fe4e4b0c441",
+    "revision": "00935780a437aec4b174e96586f08c62",
     "url": "/vveather/index.html"
   },
   {
-    "revision": "84f97874635d197de92d",
-    "url": "/vveather/js/app.97b19e25.js"
+    "revision": "a5155d92cd3c8c6ed8b2",
+    "url": "/vveather/js/app.44c9e0bc.js"
   },
   {
     "revision": "49e69d273a4eff129c25",
