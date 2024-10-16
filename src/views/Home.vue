@@ -25,7 +25,7 @@ import Daily from '../components/Daily'
 import Misc from '../components/Misc'
 import Cloth from "@/components/Cloth.vue";
 
-const BASE_URL = 'https://api.openweathermap.org/data/2.5';
+const BASE_URL = 'https://api.openweathermap.org/data/3.0';
 
 export default {
   name: 'Home',
